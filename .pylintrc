@@ -1,0 +1,14 @@
+[MESSAGES CONTROL]
+
+disable=
+    duplicate-code,
+    trailing-newlines,
+    bad-whitespace,
+    invalid-name,
+    no-else-return,
+    too-many-arguments,
+    bad-continuation,
+    too-few-public-methods,
+    too-many-locals,
+    superfluous-parens,
+

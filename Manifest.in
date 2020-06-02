@@ -1,0 +1,5 @@
+include LICENSE
+include README.rst
+include doc/make.bat doc/Makefile
+recursive-include doc/source *
+recursive-include tests *.py

@@ -1,0 +1,6 @@
+keras
+pandas
+numpy
+scipy
+cython
+cafplot
