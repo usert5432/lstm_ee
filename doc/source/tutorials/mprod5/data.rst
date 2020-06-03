@@ -71,7 +71,18 @@ After ``merge_csv.sh`` has finished running you can use the resulting file
 2. Retrieving Old Datasets
 --------------------------
 
-Unfortunately, at this moment there is no simple way to fetch the old datasets.
-Please contact the reco group coordinators to obtain them.
+The old mprod5 datasets are stored under the SAM system. The SAM definition
+that contains these datasets is ``dataset_lstm_ee_mprod5``. There are four
+different datasets available:
 
+1. ``dataset_lstm_ee_mprod5_fd_fhc_nonswap.csv.xz`` -- FD FHC
+2. ``dataset_lstm_ee_mprod5_fd_rhc_nonswap.csv.xz`` -- FD RHC
+3. ``dataset_lstm_ee_mprod5_nd_fhc_nonswap.csv.xz`` -- ND FHC
+4. ``dataset_lstm_ee_mprod5_nd_rhc_nonswap.csv.xz`` -- ND RHC
+
+To retrieve any of those datasets you can use ``ifdh_fetch`` command, e.g.
+
+::
+
+    ifdh_fetch dataset_lstm_ee_mprod5_fd_fhc_nonswap.csv.xz
 
