@@ -80,7 +80,8 @@ sphinx format. You can find this documentation by the following
 `link <prebuilt_doc_>`_ (requires nova credentials).
 
 Alternatively, you can manually compile the sphinx documentation by running
-the following command in the ``doc`` subdirectory:
+the following command in the ``doc`` subdirectory (requires ``sphinx``
+installed):
 
 .. code-block:: bash
 

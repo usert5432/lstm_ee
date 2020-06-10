@@ -1,11 +1,11 @@
 """
-Definition of an interface of a  decorator around DataGenerator.
+Definition of an interface of a decorator around `IDataGenerator`.
 """
 
 from .idata_generator import IDataGenerator
 
 class IDataDecorator(IDataGenerator):
-    """An interface to a decorator around DataGenerator."""
+    """An interface to a decorator around `IDataGenerator`"""
 
     def __init__(self, dgen):
         super(IDataDecorator, self).__init__()

@@ -1,11 +1,11 @@
 """
 A collection of DataGenerators that behave similar to `keras.utils.Sequence`.
 
-This module contains definition of the `lstm` `DataGenerator` which takes as
-input a `IDataLoader` object and creates data batches from its variables.
+This module contains definition of the `lstm_ee` `DataGenerator` which takes
+a `IDataLoader` object as input and creates data batches from its variables.
 
-In addition this module contains a number of objects that modify behavior of
-the `DataGenerator` following decorator pattern.
+This module also defines a number of transformations that modify data batches
+produced by the `DataGenerator` (following the Decorator Pattern).
 """
 
 from .data_cache           import DataCache

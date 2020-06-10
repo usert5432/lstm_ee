@@ -41,7 +41,7 @@ class Config:
         Default: None.
     optimizer : dict
         Optimizer configuration to use for training.
-        C.f. `lstm_ee.train.setup.get_early_stop` for the available options.
+        C.f. `lstm_ee.train.setup.get_optimizer` for the available options.
     prong_sorter : dict or None, optional
         Prong sorting specifications to use for 2D and 3D prongs of the form
         { 'input_png2d' : PRONG_SORT_TYPE, 'input_png3d' : PRONG_SORT_TYPE }.
@@ -65,6 +65,9 @@ class Config:
           - prong sorting in case of randomized prong order
           - noise applied to the data (if any)
           - training itself
+    steps_per_epoch : int or None, optional
+        Number of batches to use per training epoch. If None then all available
+        batches will be used in a single epoch. Default: None.
     test_size : int or float
         Amount of the `dataset` to be used for network validation
         (aka validation set or dev set).
