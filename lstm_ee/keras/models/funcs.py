@@ -21,12 +21,13 @@ def modify_layer(layer, name, batchnorm = False, dropout = None):
     return layer
 
 def modify_series_layer(
-    layer, name, mask = False, batchnorm = False, dropout = None
+    layer, name, mask = False, batchnorm = False, dropout = None,
+    mask_value = DEF_MASK
 ):
     """Add Mask and/or BatchNorm and/or Dropout on top of series `layer`"""
     if mask:
         name = '%s-masked' % (name)
-        layer = Masking(mask_value = DEF_MASK, name = name)(layer)
+        layer = Masking(mask_value = mask_value, name = name)(layer)
 
     if dropout is not None:
         name = "%s-dropout" % (name)

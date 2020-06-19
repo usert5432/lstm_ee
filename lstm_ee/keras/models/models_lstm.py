@@ -5,6 +5,8 @@ Functions to construct models that use LSTM layers to process prong inputs.
 from keras.layers import LSTM, Concatenate
 from keras.models import Model
 
+from lstm_ee.consts import DEF_MASK
+
 from .funcs import (
     get_inputs, get_outputs, modify_layer, modify_series_layer,
     add_hidden_layers, add_hidden_series_layers, add_resblocks,
@@ -13,7 +15,7 @@ from .funcs import (
 
 def make_standard_lstm_branch(
     branch_label, input_layer, hidden_layers_spec, lstm_units, batchnorm,
-    dropout, reg, lstm_kwargs = None
+    dropout, reg, lstm_kwargs = None, mask_value = DEF_MASK
 ):
     """Create the default block of layers to process sequential inputs.
 
@@ -36,8 +38,12 @@ def make_standard_lstm_branch(
         be added to regularize activations.
     reg : keras.Regularizer or None
         `keras` regularizer to use.
-    lstm_kwargs : dict or None
+    lstm_kwargs : dict or None, optional
         Additional arguments to be passed to the LSTM layer constructor.
+    mask_value : float, optional
+        In sequential data missing values were padded by some value.
+        The `mask_value` parameter specified that value.
+        Default: DEF_MASK
 
     Returns
     -------
@@ -54,7 +60,7 @@ def make_standard_lstm_branch(
 
     input_layer = modify_series_layer(
         input_layer, 'input_%s' % (branch_label),
-        mask = True, batchnorm = batchnorm
+        mask = True, batchnorm = batchnorm, mask_value = mask_value
     )
 
     layer_hidden_pre = add_hidden_series_layers(
@@ -73,7 +79,7 @@ def make_standard_lstm_branch(
 
 def make_stacked_lstm_branch(
     branch_label, input_layer, hidden_layers_spec, lstm_spec, batchnorm,
-    dropout, reg, lstm_kwargs = None
+    dropout, reg, lstm_kwargs = None, mask_value = DEF_MASK
 ):
     """Create a stack of LSTMs to process sequential inputs.
 
@@ -99,6 +105,10 @@ def make_stacked_lstm_branch(
         `keras` regularizer to use.
     lstm_kwargs : dict or None
         Additional arguments to be passed to the LSTM layers constructors.
+    mask_value : float, optional
+        In sequential data missing values were padded by some value.
+        The `mask_value` parameter specified that value.
+        Default: DEF_MASK
 
     Returns
     -------
@@ -115,7 +125,7 @@ def make_stacked_lstm_branch(
 
     input_layer = modify_series_layer(
         input_layer, 'input_%s' % (branch_label),
-        mask = True, batchnorm = batchnorm
+        mask = True, batchnorm = batchnorm, mask_value = mask_value
     )
 
     layer_hidden_pre = add_hidden_series_layers(
@@ -170,7 +180,6 @@ def make_standard_postprocess_branch(
     add_hidden_layers
     add_resblocks
     """
-
 
     layer_hidden_post = add_hidden_layers(
         input_layer, hidden_layers_spec, "hidden_post", batchnorm, dropout,
