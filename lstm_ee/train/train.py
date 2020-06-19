@@ -60,13 +60,14 @@ def create_and_train_model(args = None, extra_kwargs = None, **kwargs):
     Parameters
     ----------
     args : Args or None, optional
-        `lstm_ee` `Args` that specify the model and training.
-        If None, then the `Args` will be first constructed from `kwargs`
-        and `extra_kwargs`
+        Specification of the model and training setup
+        If None, then the model and training specification will be first
+        constructed from `kwargs` and `extra_kwargs`
     extra_kwargs : dict or None, optional
         Extra kwargs that will be passed to the `Args` constructor.
     kwargs : dict
-        Parameters that will be passed to the `Args` constructor.
+        Parameters that will be passed to the `Args` constructor if `args` is
+        None.
 
     Return
     ------
@@ -75,10 +76,9 @@ def create_and_train_model(args = None, extra_kwargs = None, **kwargs):
 
     See Also
     --------
-    Args
+    lstm_ee.args.Args
     return_training_stats
     """
-
 
     if args is None:
         args = Args(extra_kwargs = extra_kwargs, **kwargs)

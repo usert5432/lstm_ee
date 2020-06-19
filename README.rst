@@ -15,8 +15,8 @@ which laid the groundwork for the LSTM energy estimator development.
 
 Installation
 ------------
-`lstm_ee` package is indented for developers. Therefore, the recommend way
-to install the package is to:
+`lstm_ee` package is intended for developers. Therefore, it is recommended to
+install the live version of the package, for example:
 
 1. Git clone this repository:
 
@@ -91,8 +91,8 @@ It will build all available documentation, which can be viewed with a web
 browser by pointing it to the ``build/html/index.html`` file.
 
 In addition to the sphinx documentation the `lstm_ee` code is covered by a
-numpy like docstrings. Please refer to the docstrings for the details about
-inner `lstm_ee` workings.
+numpy like docstrings. Please refer to the docstrings and the source code for
+the details about inner `lstm_ee` workings.
 
 .. _prebuilt_doc: https://nova-docdb.fnal.gov/cgi-bin/private/ShowDocument?docid=45821
 .. _original: https://github.com/AlexanderRadovic/rnnNeutrinoEnergyEstimator

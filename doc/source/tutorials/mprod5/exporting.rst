@@ -52,7 +52,7 @@ point to your network(-s), for example
 Using Network at CAFAna Level
 -----------------------------
 
-NOvA-*art* comes with a number of helpers to allow simple evaluation of
+``NOvASoft`` comes with a number of helpers to allow simple evaluation of
 `lstm_ee` networks at ``CAFAna`` level. In order to use `lstm_ee` networks
 at ``CAFAna`` level, first you would have to include the header with relevant
 definitions in your ``CAFAna`` script:

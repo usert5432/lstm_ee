@@ -32,9 +32,9 @@ Job Submission
 ^^^^^^^^^^^^^^
 
 Let say you want to generate data for the Far Detector FHC training. To do that
-you would need to submit a grid job to run the script
-``exporter_lstm_ee_{fd,nd}_{fhc,rhc}_nonswap.C`` in parallel. The job can be
-submitted to the grid via the following command:
+you would need to submit a grid job that runs the script
+``exporter_lstm_ee_fd_fhc_nonswap.C`` in parallel. The job can be submitted to
+the grid via the following command:
 
 .. code-block:: bash
 

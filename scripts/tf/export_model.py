@@ -77,7 +77,7 @@ def get_optimized_graph(frozen_graph, inputs, outputs):
 
 def save_graph(graph, root, name, text_also = False):
     """Save tensorflow graph"""
-    tf.train.write_graph(graph, root, name,          as_text=False)
+    tf.train.write_graph(graph, root, name, as_text=False)
 
     if text_also:
         tf.train.write_graph(graph, root, name + ".txt", as_text=True)

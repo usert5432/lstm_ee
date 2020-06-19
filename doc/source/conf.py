@@ -42,8 +42,6 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
-pygments_style = 'sphinx'
-
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -65,6 +63,8 @@ html_static_path = ['_static']
 #import lstm_ee
 
 autosectionlabel_prefix_document = True
-spelling_lang='en_US'
+spelling_lang  = 'en_US'
+pygments_style = 'sphinx'
+
 
 

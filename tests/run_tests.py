@@ -23,7 +23,7 @@ import tests.data_generator.tests_weights
 
 def suite():
     """Create test suite"""
-    result  = unittest.TestSuite()
+    result = unittest.TestSuite()
     loader = unittest.TestLoader()
 
     result.addTest(loader.loadTestsFromModule(

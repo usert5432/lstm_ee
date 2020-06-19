@@ -8,7 +8,9 @@ from ..data import (
 )
 
 class FuncsDataLoaderBase():
-    """Functions to compare data parsed by IDataLoader with the actual data"""
+    """
+    Functions to compare data produces by `IDataLoader` to the expected data
+    """
     # pylint: disable=no-member
 
     def _retrieve_test_null_data(self, data, data_loader, var, index):

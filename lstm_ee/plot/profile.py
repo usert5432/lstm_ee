@@ -157,7 +157,7 @@ def plot_profile(
     ----------
     var_list : list
         List of values of the configuration parameters. Each element in
-        `var_list` specifies different training. Value of the configuration
+        `var_list` specifies a different training. Value of the configuration
         parameter can be of any type. These values will be used for the x axis.
     stats : dict
         Dictionary where keys are the names of evaluation metrics and the
@@ -181,30 +181,30 @@ def plot_profile(
     label_y : str or None, optional
         Label of the y axis. Default: None.
     sort_type : { 'x', 'y', None }, optional
-        If not None, then the points will be ordered on the x axis based on
-        their values in the axis specified at `sort_type`.
+        If not None, then the points will be ordered by their coordinate
+        specified by `sort_type`.
         For example, if the configuration parameter is a categorical variable
         (e.g. model name) then the x axis won't have any natural order, and
-        it may make sense to points by their y coordinates.
+        it may make sense to order points by their y coordinates.
         Default: None.
     annotate : bool, optional
         If True, then y value will be shown b next to each data point.
         Default: False.
     categorical : bool, optional
-        Whether to assume that the x variable is a categorical (as opposed to
+        Whether to assume that the x variable is categorical (as opposed to
         numerical). For example, if `var_list` contains values of the learning
         rate, then it is a numerical variable. On the other hand if `var_list`
         contains names of the models (str), then such variable cannot be
         represented as a number and therefore categorical.
         If x variable is categorical then it does not make sense to plot it
-        with logarithmic scale or convert values to numbers. This parameter
-        hints `plot_profile_base` not to do those things.
+        in logarithmic scale or convert values to numbers. `categorical`
+        parameter hints `plot_profile_base` not to do those things.
         Default: True
     fname : str
         Prefix of the path that will be used to build plot file names.
     ext : str or list of str
-        Extension of the plot. If list then the plot will be saved in multiple
-        formats.
+        Extension of the plots. If list then the plots will be saved in
+        multiple formats.
     """
     x   = prepare_x_var(var_list, categorical)
     y   = stats[stat_name].values.ravel()
