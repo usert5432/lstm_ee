@@ -71,7 +71,7 @@ def plot_fom_base(ax, rhist, stats, label, pos, color, spec):
     """
 
     plot_rhist1d(ax, rhist, histtype = 'step', label = label, color = color)
-    plot_gauss_fit(ax, rhist.bins, stats, color = color)
+    plot_gauss_fit(ax, rhist.bins_x, stats, color = color)
 
     add_stats_text(ax, stats, label, pos, color = color)
     spec.decorate(ax)

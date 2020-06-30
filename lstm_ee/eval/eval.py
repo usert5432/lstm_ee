@@ -79,7 +79,7 @@ def calc_fom_stats_hists(pred_dict, true_dict, weights, fom_specs, margin):
         rhist_dict[k] = rhist
 
         try:
-            x = (rhist.bins[1:] + rhist.bins[:-1]) / 2
+            x = (rhist.bins_x[1:] + rhist.bins_x[:-1]) / 2
             stats_dict[k].update(fit_gaussian(x, rhist.hist, margin))
         except RuntimeError:
             LOGGER.warning("Failed to fit gaussian for: %s", k)

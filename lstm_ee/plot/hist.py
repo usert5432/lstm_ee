@@ -31,7 +31,7 @@ def plot_hist_base(
     for (data,weights,label,color) in list_of_data_weight_label_color:
         rhist = RHist1D.from_data(data[key], spec.bins_x, weights)
 
-        centers = (rhist.bins[1:] + rhist.bins[:-1]) / 2
+        centers = (rhist.bins_x[1:] + rhist.bins_x[:-1]) / 2
         mean = np.average(centers, weights = rhist.hist)
 
         plot_rhist1d(

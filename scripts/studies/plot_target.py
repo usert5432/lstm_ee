@@ -81,7 +81,9 @@ def main():
             )
 
         np.savetxt(os.path.join(plotdir, "%s_hist.txt" % (label)), rhist.hist)
-        np.savetxt(os.path.join(plotdir, "%s_bins.txt" % (label)), rhist.bins)
+        np.savetxt(
+            os.path.join(plotdir, "%s_bins.txt" % (label)), rhist.bins_x
+        )
 
 if __name__ == '__main__':
     main()
