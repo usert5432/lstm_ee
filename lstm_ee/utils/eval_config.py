@@ -87,7 +87,10 @@ class EvalConfig:
     prong_sorter : str or None,
         JSON file name with the prong sorting config that will be used during
         evaluation.  C.f. `Config.prong_sorter` for the configuration spec.
-    test_size : int or float or None
+    seed : int or str or None,
+        Seed to initialize PRG for splitting dataset into training/validation
+        parts.
+    test_size : int or float or str or None
         Size of the dataset that will be used for evaluation.
         C.f. `Config.test_size`.
     weights : str or None
@@ -110,15 +113,19 @@ class EvalConfig:
             cmdargs.noise,
             cmdargs.preset,
             cmdargs.prong_sorter,
+            cmdargs.seed,
             cmdargs.test_size,
             cmdargs.weights,
         )
 
-    def __init__(self, data, noise, preset, prong_sorter, test_size, weights):
+    def __init__(
+        self, data, noise, preset, prong_sorter, seed, test_size, weights
+    ):
         self.data         = EvalConfig._recognize_same(data)
         self.noise        = EvalConfig._recognize_same(noise)
         self.preset       = EvalConfig._recognize_same(preset)
         self.prong_sorter = EvalConfig._recognize_same(prong_sorter)
+        self.seed         = EvalConfig._recognize_same(seed)
         self.test_size    = EvalConfig._recognize_same(test_size)
         self.weights      = EvalConfig._recognize_same(weights)
 
@@ -129,6 +136,7 @@ class EvalConfig:
             ('noise',   self.noise),
             ('preset',  self.preset),
             ('psort',   self.prong_sorter),
+            ('seed',    self.seed),
             ('tsize',   self.test_size),
             ('weights', self.weights),
         ])
@@ -136,6 +144,7 @@ class EvalConfig:
     def modify_eval_args(self, args):
         """Modify parameters of `args` using values from `self`"""
         modify_args_value(args.config, 'dataset',   self.data)
+        modify_args_value(args.config, 'seed',      self.seed, int)
         modify_args_value(args.config, 'test_size', self.test_size, float)
         modify_args_value(args.config, 'weights',   self.weights)
 

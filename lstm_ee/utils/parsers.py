@@ -66,6 +66,15 @@ def add_basic_eval_args(parser, presets_eval):
     )
 
     parser.add_argument(
+        '--seed',
+        help    =
+            'Seed to initialize PRG for data split into train/test parts',
+        default = 'same',
+        dest    = 'seed',
+        type    = str,
+    )
+
+    parser.add_argument(
         '-t', '--test-size',
         help    = 'Subset size of the dataset to use for evaluation',
         default = 'same',
