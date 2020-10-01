@@ -77,9 +77,15 @@ that perform the actual energy evaluation:
    Var hadE  = LSTME::hadEnergy(model);
    Var numuE = LSTME::numuEnergy(model);
 
+.. versionchanged:: r44349
+    ``r44349`` renames LSTM energy constructor functions:
+    `muonEnergy` -> `primaryEnergy`; `hadEnergy` -> `secondaryEnergy`;
+    `numuEnergy` -> `totalEnergy`.
+
 These variables ``muE``, ``hadE``, ``numuE`` will behave as the standard
 ``CAFAna`` variables for all intents and purposes. You can use them to create
 Spectra, Predictions, etc.
+
 
 .. warning::
     The ``CAFAnaModel`` was written in order to cache results of energy
