@@ -1,7 +1,6 @@
-"""Train final of LSTM v3 FD FHC network on MProd5"""
+"""Train final LSTM v3 FD FHC network on MProd5"""
 
 import os
-from speval import speval
 
 from lstm_ee.args    import join_dicts
 from lstm_ee.consts  import ROOT_OUTDIR
