@@ -20,7 +20,7 @@ def calc_median(v, w):
         Median of the `v` array.
     """
     # pylint: disable=len-as-condition
-    if len(v):
+    if len(v) == 0:
         return 0
 
     sorted_indices = np.argsort(v)
