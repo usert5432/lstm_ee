@@ -32,20 +32,11 @@ def return_training_stats(train_log, savedir):
 
     best_idx = np.argmin(train_log.history['val_loss'])
 
-    ms   = train_log.history['val_target_total_cl_ms_relative_error'][best_idx]
-    mean = \
-        train_log.history['val_target_total_cl_mean_relative_error'][best_idx]
-
-    stdev = np.sqrt(ms - mean**2)
-
     result = {
         'loss'    : (
             train_log.history['val_target_total_loss'][best_idx]
           + train_log.history['val_target_primary_loss'][best_idx]
         ),
-        'rms'     : np.sqrt(ms),
-        'mean'    : mean,
-        'stdev'   : stdev,
         'status'  : 0,
         'time'    : train_log.history['train_time'][-1],
         'epochs'  : len(train_log.history['val_loss']),
