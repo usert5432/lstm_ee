@@ -1,6 +1,14 @@
 Wilson Cluster Setup
 ====================
 
+.. warning::
+    Wilson Cluster undergone a major upgrade in December of 2020.
+    Unfortunately, things still have not settled.
+    This guide no longer applies, and should be updated once Wilson Cluster
+    environment stabilizes.
+    If you need nelp with Wilson Cluster, please check out #nova_reco channel
+    on NOvA Slack.
+
 This is a quick guide to get you started with training networks on the Wilson
 Cluster.
 
