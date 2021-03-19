@@ -82,6 +82,18 @@ def save_graph(graph, root, name, text_also = False):
     if text_also:
         tf.train.write_graph(graph, root, name + ".txt", as_text=True)
 
+def get_tf_opname_for_layer(model, layer_name, output_op = False):
+    """Return tf i/o node name for a layer of keras model"""
+    try:
+        layer = model.get_layer(layer_name)
+    except ValueError:
+        return None
+
+    if output_op:
+        return layer.output.op.name
+    else:
+        return layer.input.op.name
+
 def create_tf_config(args, model):
     """
     Create evaluation configuration that holds input variables and graph nodes
@@ -93,12 +105,12 @@ def create_tf_config(args, model):
     config_tf['vars_png3d'] = args.vars_input_png3d
 
     config_tf.update({
-        x : model.get_layer(x).input.op.name \
+        x : get_tf_opname_for_layer(model, x, False) \
             for x in [ 'input_slice', 'input_png2d', 'input_png3d' ]
     })
 
     config_tf.update({
-        x : model.get_layer(x).output.op.name \
+        x : get_tf_opname_for_layer(model, x, True) \
             for x in [ 'target_primary', 'target_total' ]
     })
 
