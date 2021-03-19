@@ -109,6 +109,9 @@ def plot_vars_profile(
 
 def slice_var_generator(dgen, smear):
     """Yield IDataGeneator with smeared slice level input variable"""
+    if dgen.vars_input_slice is None:
+        return None
+
     for vname in dgen.vars_input_slice:
         dg_smear = DataSmear(
             dgen, smear = smear, affected_vars_slice = [ vname ]
@@ -118,6 +121,9 @@ def slice_var_generator(dgen, smear):
 
 def png2d_var_generator(dgen, smear):
     """Yield IDataGeneator with smeared 2D prong level input variable"""
+    if dgen.vars_input_png2d is None:
+        return None
+
     for vname in dgen.vars_input_png2d:
         dg_smear = DataSmear(
             dgen, smear = smear, affected_vars_png2d = [ vname ]
@@ -127,6 +133,9 @@ def png2d_var_generator(dgen, smear):
 
 def png3d_var_generator(dgen, smear):
     """Yield IDataGeneator with smeared 3D prong level input variable"""
+    if dgen.vars_input_png3d is None:
+        return None
+
     for vname in dgen.vars_input_png3d:
         dg_smear = DataSmear(
             dgen, smear = smear, affected_vars_png3d = [ vname ]
@@ -152,6 +161,9 @@ def make_perturb_profile(
     """
     Evaluate performance for generators yielded by `smeared_var_generator`
     """
+    if smeared_var_generator is None:
+        return
+
     FIT_MARGIN = 0.5
     var_list   = var_list[:]
     stat_list  = stat_list[:]
