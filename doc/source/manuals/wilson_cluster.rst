@@ -12,9 +12,9 @@ Wilson Cluster Setup
 This is a quick guide to get you started with training networks on the Wilson
 Cluster.
 
-First, you will need access to the Wilson Cluster if you do not have it yet.
-Ask your Computing Coordinator if you do not have it yet. You can verify
-if you can connect to the Wilson Cluster by running:
+First, you need to have access to the Wilson Cluster. Ask your Computing
+Coordinator if you do not have access yet. You can verify whether you can
+connect to the Wilson Cluster by running:
 
 .. code-block:: bash
 
