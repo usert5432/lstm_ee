@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath('..'))
 # -- Project information -----------------------------------------------------
 
 project = 'lstm_ee'
-copyright = '2020, Dmitrii Torbunov'
+copyright = '2020-2021, Dmitrii Torbunov'
 author = 'Dmitrii Torbunov'
 
 

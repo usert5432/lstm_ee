@@ -6,4 +6,5 @@ Tutorials
    :caption: Tutorials:
 
    mprod5/index
+   dune/index
 
