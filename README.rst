@@ -1,13 +1,13 @@
 lstm_ee
 =======
-Package to train NOvA LSTM Energy Estimators.
+Package to train NOvA/DUNE RNN Energy Estimators.
 
 Overview
 --------
 This package is designed to simplify (re-)training of the energy estimators for
-the NOvA Experiment that are based on recurrent neural networks. It contains
-an extensive library of helper functions and a number of scripts to train
-various kinds of energy estimators and evaluate them. Please refer to
+the NOvA/DUNE experiments that are based on recurrent neural networks.  It
+contains an extensive library of helper functions and a number of scripts to
+train various kinds of energy estimators and evaluate them. Please refer to
 `Documentation`_ for the details.
 
 This package is inspired by the `rnnNeutrinoEnergyEstimator <original_>`_
