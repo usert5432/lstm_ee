@@ -94,8 +94,14 @@ Spectra, Predictions, etc.
     detect presence of systematic shifts. That is, it examines
     ``SRProxySystController::fgSeqNo`` to check if systematic shift is present.
 
+    .. versionchanged:: r45555
+        ``r45555`` deprecates usage of ``SRProxySystController::fgSeqNo`` in
+        favor of ``caf::SRProxySystController::Generation()``.
+
     Since this method is not fully tested it may result in numerous subtle
     bugs, where for example energy evaluated on a sample without systematics
     will be reused on a sample with systematics. Bump #CAFAna channel on slack
     if this happens.
+
+
 
