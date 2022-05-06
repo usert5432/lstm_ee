@@ -2,6 +2,15 @@ lstm_ee
 =======
 Package to train NOvA/DUNE RNN Energy Estimators.
 
+**DEPRECATION WARNING**: This package contains a frozen version of the code
+that was used to train the initial energy estimators for NOvA and DUNE. This
+code is designed to work only with TensorFlow v1.x and won't work with
+TensorFlow v2 and higher. It is recommended to use the official fermilab
+container `singularity-ML-tf1.12.simg` to perform reproducible training. No new
+features will be implemented in this package. All new development will be in
+the [vlne](https://github.com/usert5432/vlne) repository.
+
+
 Overview
 --------
 This package is designed to simplify (re-)training of the energy estimators for
@@ -12,6 +21,7 @@ train various kinds of energy estimators and evaluate them. Please refer to
 
 This package is inspired by the `rnnNeutrinoEnergyEstimator <original_>`_
 which laid the groundwork for the LSTM energy estimator development.
+
 
 Installation
 ------------
